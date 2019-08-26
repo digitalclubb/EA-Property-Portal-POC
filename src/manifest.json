@@ -1,6 +1,6 @@
 {
-  "name": "EA-Property-Portal-POC",
-  "short_name": "EA-Property-Portal-POC",
+  "name": "Estate Agent Property Portal",
+  "short_name": "Property Portal",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",

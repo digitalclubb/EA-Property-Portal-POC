@@ -1,0 +1,11 @@
+.filters {
+   
+}
+
+.filters__item {
+    background-color: #e2dfdf;
+    padding: 10px;
+    position: sticky;
+    text-align: left;
+    top: 0;
+}
