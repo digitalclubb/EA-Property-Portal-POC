@@ -3,12 +3,8 @@ html, body {
 	width: 100%;
 	padding: 0;
 	margin: 0;
-	background: #FAFAFA;
 	font-family: 'Helvetica Neue', arial, sans-serif;
-	font-weight: 400;
 	color: #444;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
 }
 
 * {
@@ -17,12 +13,62 @@ html, body {
 	padding: 0;
 }
 
-#app {
-	height: 100%;
+h3 {
+	font-size: 26px;
 }
 
-.container {
-	padding-right: 40px;
-	padding-left: 40px;
-	max-width: 1440px;
+.section {
+	border-bottom: solid 1px #e5e5e5;
+	padding-bottom: 20px;
+	padding-top: 20px;
+}
+
+.hidden {
+	visibility: hidden;
+}
+
+.form-group {
+	margin-bottom: 30px;
+}
+
+.fieldset {
+	border: 0;
+	max-width: 66.66%;
+}
+
+.legend {
+	margin-bottom: 15px;
+}
+
+.label {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 1.25;
+    color: #0b0c0c;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input,
+.textblock {
+	font-weight: bold;
+	font-size: 16px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 40px;
+    padding: 5px;
+    border: 2px solid #0b0c0c;
+    border-radius: 0;
+}
+
+.textblock {
+	height: auto;
+}
+
+.input--short {
+	width: 66.66%;
+}
+
+.input--shortest {
+	width: 50%;
 }

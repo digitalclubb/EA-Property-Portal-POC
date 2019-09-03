@@ -1,15 +1,14 @@
 import { h, Component } from 'preact';
-import { Router } from 'preact-router';
+import { Provider } from 'unistore/preact';
+
+import store from '../store'
 
 import Header from './header';
 import Search from './search';
 import Filters from './filters';
 import Footer from './footer';
 
-// Code-splitting is automated for routes
-import List from '../routes/list';
-import Create from '../routes/create';
-import Edit from '../routes/edit';
+import Router from '../routes'
 
 export default class App extends Component {
 
@@ -21,14 +20,10 @@ export default class App extends Component {
 		return (
 			<div>
 				<Header />
-				<div class="container">
-					<Router onChange={ this.handleRoute }>
-						<List path="/" />
-						<Create path="/create/" />
-						<Edit path="/edit/:id" />
-					</Router>
-					<Footer />
-				</div>
+				<Provider store={store}>
+					<Router />
+				</Provider>
+				<Footer />
 			</div>
 		);
 	}

@@ -1,20 +1,25 @@
 import { h } from 'preact';
+import { connect } from 'unistore/preact'
 import style from './style';
+
+import actions from '../../actions'
 
 import Search from '../../components/search';
 import Filters from '../../components/filters';
-import Card from '../../components/property';
+import Property from '../../components/property';
 
-const List = () => (
+const List = connect( 'list', actions )( ({ addTodo, list }) => (
     <div>
         <Search />
         <table class={style.list}>
             <Filters />
             <tbody class="list">
-                <Card />
+                { list.map( item => (
+                    <Property item={ item } />
+                ))}
             </tbody>
         </table>
-    </div>
-);
+    </div> 
+));
 
 export default List;

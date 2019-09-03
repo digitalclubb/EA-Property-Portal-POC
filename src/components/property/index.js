@@ -1,14 +1,19 @@
-import { h } from 'preact';
+import { h, Component } from 'preact';
 import { Link } from 'preact-router/match';
 
-const Property = () => (
-	<tr>
-        <td><Link href="/edit/1234">751 Park Road, South West London, SW78 1WE</Link></td>
-        <td>4</td>
-        <td>House</td>
-        <td>£950,000</td>
-        <td>Draft</td>
-    </tr>
-);
+class Property extends Component {
+    render({ item }) {
+        return (
+            <tr>
+                <td><Link href={`/edit/${item.id}`}>{item.address.line1},{item.address.line2},{item.address.city}</Link></td>
+                <td>{item.address.postcode}</td>
+                <td>{item.bedrooms}</td>
+                <td>{item.type}</td>
+                <td>{item.price}</td>
+                <td>{item.id}</td>
+            </tr>
+        )
+    }
+};
 
 export default Property;
