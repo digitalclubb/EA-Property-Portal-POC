@@ -11,7 +11,7 @@ const initialState = {
 
 const store = createStore( initialState );
 
-// Persistence helper library with localStorage
+// Persistence helper library with localStorage (demo purposes only)
 const adapter = localStorageAdapter();
 persistStore(store, adapter);
 

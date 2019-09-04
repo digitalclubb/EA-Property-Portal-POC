@@ -10,7 +10,7 @@ class Property extends Component {
                 <td>{item.bedrooms}</td>
                 <td>{item.type}</td>
                 <td>{item.price}</td>
-                <td>{item.id}</td>
+                <td>{item.status}</td>
             </tr>
         )
     }

@@ -42,7 +42,7 @@ export default {
 				}
 			],
 			"notes": "internal notes",
-			"state": "draft"
+			"status": "draft"
 		},
 		{
 			"id": 4321,
@@ -86,7 +86,7 @@ export default {
 				}
 			],
 			"notes": "internal notes",
-			"state": "publised"
+			"status": "publised"
 		}
 	]
 }
