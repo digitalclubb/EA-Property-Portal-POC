@@ -41,7 +41,8 @@ export default {
 					"selected": true
 				}
 			],
-			"notes": "internal notes"
+			"notes": "internal notes",
+			"state": "draft"
 		},
 		{
 			"id": 4321,
@@ -84,7 +85,8 @@ export default {
 					"selected": true
 				}
 			],
-			"notes": "internal notes"
+			"notes": "internal notes",
+			"state": "publised"
 		}
 	]
 }

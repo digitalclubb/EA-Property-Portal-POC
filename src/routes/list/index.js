@@ -1,8 +1,7 @@
 import { h } from 'preact';
 import { connect } from 'unistore/preact'
-import style from './style';
-
 import actions from '../../actions'
+import style from './style';
 
 import Search from '../../components/search';
 import Filters from '../../components/filters';

@@ -1,11 +1,26 @@
-import { h } from 'preact';
+import { h, Component } from 'preact';
 import style from './style';
 
-const Toolbar = ({ id }) => (
-    <div class={style.toolbar}>
-        last updated
-        status: draft
-    </div>
-);
+import Button from '../button';
+
+class Toolbar extends Component {
+
+	state = {
+
+	}
+
+	componentWillMount() {
+
+	}
+
+	render() {
+		return (
+			<div class={style.toolbar}>
+				<div style="margin-left: 150px;">Save</div>
+			</div>
+		)
+	}
+
+}
 
 export default Toolbar;
