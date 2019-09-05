@@ -14,7 +14,7 @@ class Description extends Component {
 
 	componentWillMount() {
 		const property = this.props.property;
-		if ( property ) {
+		if ( property.type ) {
 			this.setState({
 				type: property.type,
 				bedrooms: property.bedrooms,
@@ -22,6 +22,17 @@ class Description extends Component {
 				description: property.description
 			});
 		}
+	}
+
+	componentWillReceiveProps( nextProps ) {
+		
+		// Props have updated so we need to update state
+		const property = nextProps.property;
+		this.setState( state => ({
+			...state,
+			...property
+			}
+		));
 	}
 
 	render({ property, handleChange }) {
@@ -38,7 +49,7 @@ class Description extends Component {
 
 					<div class="form-group">
 						<label class="label" for="features">Key features</label>
-						{ this.state.features.map( feature => (
+						{ this.state.features && this.state.features.map( feature => (
 							<input class="input input--shortest" name="features" type="text" value={ feature } />
 						))}
 						

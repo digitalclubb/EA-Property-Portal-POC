@@ -10,11 +10,22 @@ class Notes extends Component {
 
 	componentWillMount() {
 		const property = this.props.property;
-		if ( property ) {
+		if ( property.notes ) {
 			this.setState({
 				notes: property.notes
 			});
 		}
+	}
+
+	componentWillReceiveProps( nextProps ) {
+		
+		// Props have updated so we need to update state
+		const property = nextProps.property;
+		this.setState( state => ({
+			...state,
+			...property
+			}
+		));
 	}
 
 	render({ property, handleChange }) {

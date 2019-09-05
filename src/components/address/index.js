@@ -14,7 +14,7 @@ class Address extends Component {
 
 	componentWillMount() {
 		const property = this.props.property;
-		if ( property ) {
+		if ( property.address ) {
 			this.setState({
 				line1: property.address.line1,
 				line2: property.address.line2,
@@ -25,7 +25,18 @@ class Address extends Component {
 		}
 	}
 
-	render({ property, handleChange }) {
+	componentWillReceiveProps( nextProps ) {
+		
+		// Props have updated so we need to update state
+		const property = nextProps.property.address;
+		this.setState( state => ({
+			...state,
+			...property
+			}
+		));
+	}
+
+	render({ handleChange }) {
 		return (
 			<section id="address" class="section">
 				<fieldset class="fieldset">

@@ -7,7 +7,7 @@ import Search from '../../components/search';
 import Filters from '../../components/filters';
 import Property from '../../components/property';
 
-const List = connect( 'list', actions )( ({ addTodo, list }) => (
+const List = connect( 'list', actions )( ({ list }) => (
     <div>
         <Search />
         <table class={style.list}>

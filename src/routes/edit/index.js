@@ -2,12 +2,12 @@ import { h } from 'preact';
 import { connect } from 'unistore/preact';
 import actions from '../../actions';
 
-import FormEdit from '../../components/form-edit';
+import Form from '../../components/form';
 import Sidebar from '../../components/sidebar';
 
-const Edit = connect( ['list'], actions )( ({ id, list, updateProperties }) => (
+const Edit = connect( ['list'], actions )( ({ id, list, updateProperties, createProperty }) => (
 	<div>
-		<FormEdit { ...{ id,list, updateProperties } } />
+		<Form { ...{ id,list, updateProperties, createProperty } } />
 		<Sidebar />
 	</div>
 ));

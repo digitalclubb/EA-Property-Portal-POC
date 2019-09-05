@@ -1,10 +1,14 @@
 const actions = store => ({
-    updateProperties: ( state, data )  => {
+    updateProperties: ( state )  => {
+		return state;
+	},
+	
+	createProperty: ( state, data ) => {
 		return {
-			...state.list, 
-			...data
-		};
-    }
+			...state,
+			list: [ ...state.list, ...data ]
+		}
+	}
 });
 
 export default actions;
