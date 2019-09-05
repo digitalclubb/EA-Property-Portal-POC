@@ -1,10 +1,7 @@
 import { h, Component } from 'preact';
-import style from './style';
 import nestedProperty from 'nested-property';
 
 import Toolbar from '../toolbar';
-import Input from '../../elements/input';
-import Textarea from '../../elements/textarea';
 
 // Different sections of the form
 import Address from '../address';
@@ -15,7 +12,7 @@ import Price from '../price';
 import Schedule from '../schedule';
 import Notes from '../notes';
 
-class Form extends Component {
+class FormEdit extends Component {
 
 	constructor() {
 		super();
@@ -51,13 +48,12 @@ class Form extends Component {
 		this.setState( { list: filtered } );
 	}
 
-	// TODO: Break out this massive form into components :>
 	render() {
 		const property = this.state.list[0];
 		return (
 			<div>
 				<Toolbar handleChange={ this.handleChange } handleSubmit={ this.handleSubmit } status={ property.status } />
-				<article class={style.article}>
+				<article class="article">
 					<form onSubmit={this.handleSubmit}>
 						<Address property={property} handleChange={ this.handleChange } />
 						<Description property={property} handleChange={ this.handleChange } />
@@ -73,4 +69,4 @@ class Form extends Component {
 	}
 }
 
-export default Form;
+export default FormEdit;
