@@ -32,10 +32,17 @@ class Toolbar extends Component {
 		}));
 	}
 
-	render({ handleSubmit, status }) {
+	render({ handleSubmit, handleNewSubmit, status, newProperty }) {
+
+		// Change event handler if it's new or existing
+		let eventHandler = handleSubmit;
+		if ( newProperty ) {
+			eventHandler = handleNewSubmit;
+		}
+
 		return (
 			<div class={style.toolbar}>
-				<button style="margin-left: 150px;" onClick={ handleSubmit }>Save</button>
+				<button style="margin-left: 150px;" onClick={ eventHandler }>Save</button>
 				<button style="margin-left: 150px;" onClick={ this.handleClick }>Status: {status}</button>
 				<div class={ this.state.showPublish ? style.visible : style.hidden }>
 					<div>Schedule Publish: No schedule</div>

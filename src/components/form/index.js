@@ -55,7 +55,7 @@ class Form extends Component {
 		// If no matching property exists, it must be new
 		if ( !property.length ) {
 			property = [{
-				id: this.props.id,
+				id: parseInt( this.props.id ),
 				status: 'draft'
 			}]
 			this.newProperty = true;
@@ -75,7 +75,7 @@ class Form extends Component {
 
 		return (
 			<div>
-				<Toolbar handleChange={ this.handleChange } handleSubmit={ eventHandler } status={ property.status } />
+				<Toolbar handleChange={ this.handleChange } handleSubmit={ this.handleSubmit } handleNewSubmit={ this.handleNewSubmit } status={ property.status } newProperty={ this.newProperty } />
 				<article class="article">
 					<form onSubmit={ eventHandler }>
 						<Address property={ property } handleChange={ this.handleChange } />
