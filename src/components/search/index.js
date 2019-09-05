@@ -1,10 +1,11 @@
 import { h } from 'preact';
 import style from './style';
 
+import Input from '../../elements/input';
+
 const Search = () => (
 	<div class={style.search}>
-		Search:
-        <input type="text" placeholder="Address or post code" />
+		<Input label="Search" id="search" name="search" type="text" handleChange={ this.handleChange }  />
 	</div>
 );
 

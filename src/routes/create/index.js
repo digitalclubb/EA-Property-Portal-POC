@@ -1,11 +1,15 @@
 import { h } from 'preact';
-import { connect } from 'unistore/preact'
+import { connect } from 'unistore/preact';
+import actions from '../../actions';
 
-import actions from '../../actions'
-import List from '../../components/list'
+import Form from '../../components/form';
+import Sidebar from '../../components/sidebar';
 
-const Create = connect( 'list', actions )( ({ addTodo, list }) => (
-	<List { ...{ addTodo,list } } />
+const Create = connect( ['list'], actions )( ({ id, list, updateProperties }) => (
+	<div>
+		<Form { ...{ id,list, updateProperties } } />
+		<Sidebar />
+	</div>
 ));
 
 export default Create;
