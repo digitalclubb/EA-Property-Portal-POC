@@ -2,6 +2,8 @@ import { h, Component } from 'preact';
 import style from './style';
 
 class Photos extends Component {
+	
+	// TODO: Not implemented for POC
 	render({ photos }) {
 		return (
 			<section id="photos" class="section photos">

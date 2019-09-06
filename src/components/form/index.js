@@ -85,7 +85,7 @@ class Form extends Component {
 						<Photos photos={ property.photos } />
 						<Floorplan floorplan={ property.floorplan } />
 						<Price property={ property } handleChange={ this.handleChange } />
-						<Schedule />
+						<Schedule portals={property.portals} />
 						<Notes property={ property } handleChange={ this.handleChange } />
 					</form>
 				</article>

@@ -1,50 +1,87 @@
-import { h } from 'preact';
+import { h, Component } from 'preact';
 
-const Schedule = () => {
-	return (
-		<section id="schedule" class="section">
-			schedule: 
-			expired:
-			<fieldset class="fieldset">
-				<legend class="legend">
-					<h3>Publish settings</h3>
-				</legend>
+import Checkbox from '../../elements/checkbox';
 
-				<div class="form-group">
-					<div class="label">Schedule</div>
-					<label class="label-group">
-						<input class="" name="schedule" type="radio" />
-						No schedule
-					</label>
-					<label class="label-group">
-						<input class="" name="schedule" type="radio" />
-						Schedule start
-					</label>
-				</div>
+class Schedule extends Component {
 
-				<div class="form-group">
-					<div class="label">Active portals</div>
-					<span class="hint">Select all that apply.</span>
-					<div class="form-checkbox">
-						<input class="checkbox" id="onthemarket" name="onthemarket" type="checkbox" value="onthemarket" />
-						<label class="label-inline" for="onthemarket">On The Market</label>
+	state = {
+		portals: [
+			{
+				"id": "onthemarket",
+				"title": "On The Market",
+				"selected": false
+			},
+			{
+				"id": "primelocation",
+				"title": "Primelocation",
+				"selected": false
+			},
+			{
+				"id": "rightmove",
+				"title": "Rightmove",
+				"selected": false
+			},
+			{
+				"id": "zoopla",
+				"title": "Zoopla",
+				"selected": false
+			}
+		]
+	}
+
+	componentWillMount() {
+		const portals = this.props.portals;
+		if ( portals ) {
+			this.setState({
+				portals: portals
+			});
+		}
+	}
+
+	componentWillReceiveProps( nextProps ) {
+		
+		// Props have updated so we need to update state
+		const portals = nextProps.property.portals;
+		this.setState( state => ({
+			...state,
+			...portals
+			}
+		));
+	}
+
+	// TODO: Not implemented for POC
+	render() {
+		return (
+			<section id="schedule" class="section">
+				<fieldset class="fieldset">
+					<legend class="legend">
+						<h3>Publish settings</h3>
+					</legend>
+
+					<div class="form-group">
+						<div class="label">Schedule</div>
+						<label class="label-group">
+							<input class="" name="schedule" type="radio" checked /> 
+							No schedule
+						</label>
+						<label class="label-group">
+							<input class="" name="schedule" type="radio" disabled />
+							Schedule start
+						</label>
 					</div>
-					<div class="form-checkbox">
-						<input class="checkbox" id="primelocation" name="primelocation" type="checkbox" value="primelocation" />
-						<label class="label-inline" for="primelocation">Primelocation</label>
+
+					<div class="form-group">
+						<div class="label">Active portals</div>
+						<span class="hint">Select all that apply.</span>
+
+						{ this.state.portals && this.state.portals.map( portal => (
+							<Checkbox label={ portal.title } id={ portal.id } name={ portal.id } value={ portal.id } checked={ portal.selected } />
+						))}
 					</div>
-					<div class="form-checkbox">
-						<input class="checkbox" id="rightmove" name="rightmove" type="checkbox" value="rightmove" />
-						<label class="label-inline" for="rightmove">Rightmove</label>
-					</div>
-					<div class="form-checkbox">
-						<input class="checkbox" id="zoopla" name="zoopla" type="checkbox" value="zoopla" />
-						<label class="label-inline" for="zoopla">Zoopla</label>
-					</div>
-				</div>
-			</fieldset>
-		</section>
-	)
+				</fieldset>
+			</section>
+		)
+	}
 }
 
 export default Schedule;

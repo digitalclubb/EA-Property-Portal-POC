@@ -29,18 +29,22 @@ export default {
 			"schedule": false,
 			"portals": [
 				{
+					"id": "onthemarket",
 					"title": "On The Market",
-					"selected": false
-				},
-				{
-					"title": "Primelocation",
-					"selected": false
-				},
-				{
-					"title": "Rightmove",
 					"selected": true
 				},
 				{
+					"id": "primelocation",
+					"title": "Primelocation",
+					"selected": true
+				},
+				{
+					"id": "rightmove",
+					"title": "Rightmove",
+					"selected": false
+				},
+				{
+					"id": "zoopla",
 					"title": "Zoopla",
 					"selected": true
 				}
@@ -77,18 +81,22 @@ export default {
 			"schedule": false,
 			"portals": [
 				{
+					"id": "onthemarket",
 					"title": "On The Market",
 					"selected": false
 				},
 				{
+					"id": "primelocation",
 					"title": "Primelocation",
 					"selected": false
 				},
 				{
+					"id": "rightmove",
 					"title": "Rightmove",
 					"selected": true
 				},
 				{
+					"id": "zoopla",
 					"title": "Zoopla",
 					"selected": true
 				}
