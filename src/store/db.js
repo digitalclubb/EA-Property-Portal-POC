@@ -16,11 +16,15 @@ export default {
 			"description": "This is the description",
 			"photos": [
 				{
-					"src": "something.jpg",
-					"alt": "Alt text"
+					"src": "/assets/property-1.jpg",
+					"alt": "Some meaningful alt text"
+				},
+				{
+					"src": "/assets/property-2.jpg",
+					"alt": "Some meaningful alt text"
 				}
 			],
-			"floorplan": "floorplan.jpg",
+			"floorplan": "/assets/floorplan-1.png",
 			"price": "145000",
 			"schedule": false,
 			"portals": [
@@ -60,11 +64,15 @@ export default {
 			"description": "This is the description",
 			"photos": [
 				{
-					"src": "something.jpg",
-					"alt": "Alt text"
+					"src": "/assets/property-3.jpg",
+					"alt": "Some meaningful alt text"
+				},
+				{
+					"src": "/assets/property-4.jpg",
+					"alt": "Some meaningful alt text"
 				}
 			],
-			"floorplan": "floorplan.jpg",
+			"floorplan": "/assets/floorplan-2.jpg",
 			"price": "415000",
 			"schedule": false,
 			"portals": [
@@ -86,7 +94,7 @@ export default {
 				}
 			],
 			"notes": "internal notes",
-			"status": "publised"
+			"status": "published"
 		}
 	]
 }

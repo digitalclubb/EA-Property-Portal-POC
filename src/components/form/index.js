@@ -4,6 +4,7 @@ import nestedProperty from 'nested-property';
 import Toolbar from '../toolbar';
 
 // Different sections of the form
+import Title from '../title';
 import Address from '../address';
 import Description from '../description';
 import Photos from '../photos';
@@ -78,10 +79,11 @@ class Form extends Component {
 				<Toolbar handleChange={ this.handleChange } handleSubmit={ this.handleSubmit } handleNewSubmit={ this.handleNewSubmit } status={ property.status } newProperty={ this.newProperty } />
 				<article class="article">
 					<form onSubmit={ eventHandler }>
+						<Title property={ property } handleChange={ this.handleChange } />
 						<Address property={ property } handleChange={ this.handleChange } />
 						<Description property={ property } handleChange={ this.handleChange } />
-						<Photos />
-						<Floorplan />
+						<Photos photos={ property.photos } />
+						<Floorplan floorplan={ property.floorplan } />
 						<Price property={ property } handleChange={ this.handleChange } />
 						<Schedule />
 						<Notes property={ property } handleChange={ this.handleChange } />
