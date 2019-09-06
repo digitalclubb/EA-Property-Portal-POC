@@ -38,17 +38,6 @@ class Schedule extends Component {
 		}
 	}
 
-	componentWillReceiveProps( nextProps ) {
-		
-		// Props have updated so we need to update state
-		const portals = nextProps.property.portals;
-		this.setState( state => ({
-			...state,
-			...portals
-			}
-		));
-	}
-
 	// TODO: Not implemented for POC
 	render() {
 		return (

@@ -1,6 +1,6 @@
 import { h, Component } from 'preact';
 
-const Checkbox = ({ label, id, name, value, checked, handleChange }) => {
+const Checkbox = ({ label, id, name, value, checked }) => {
 	return (
 		<div class="form-checkbox">
 			<input class="checkbox" id={ id } name={ name } type="checkbox" value={ value } checked={ checked } />
