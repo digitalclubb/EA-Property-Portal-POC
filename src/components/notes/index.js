@@ -9,10 +9,10 @@ class Notes extends Component {
 	}
 
 	componentWillMount() {
-		const property = this.props.property;
-		if ( property.notes ) {
+		const notes = this.props.notes;
+		if ( notes ) {
 			this.setState({
-				notes: property.notes
+				notes: notes
 			});
 		}
 	}
@@ -20,12 +20,10 @@ class Notes extends Component {
 	componentWillReceiveProps( nextProps ) {
 		
 		// Props have updated so we need to update state
-		const property = nextProps.property;
-		this.setState( state => ({
-			...state,
-			...property
-			}
-		));
+		const notes = nextProps.notes;
+		this.setState({
+			notes: notes
+		});
 	}
 
 	render({ property, handleChange }) {

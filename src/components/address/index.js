@@ -13,14 +13,14 @@ class Address extends Component {
 	}
 
 	componentWillMount() {
-		const property = this.props.property;
-		if ( property.address ) {
+		const address = this.props.address;
+		if ( address ) {
 			this.setState({
-				line1: property.address.line1,
-				line2: property.address.line2,
-				city: property.address.city,
-				county: property.address.county,
-				postcode: property.address.postcode
+				line1: address.line1,
+				line2: address.line2,
+				city: address.city,
+				county: address.county,
+				postcode: address.postcode
 			});
 		}
 	}
@@ -28,10 +28,10 @@ class Address extends Component {
 	componentWillReceiveProps( nextProps ) {
 		
 		// Props have updated so we need to update state
-		const property = nextProps.property.address;
+		const address = nextProps.address;
 		this.setState( state => ({
 			...state,
-			...property
+			...address
 			}
 		));
 	}

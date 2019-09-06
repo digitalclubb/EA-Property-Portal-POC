@@ -7,10 +7,10 @@ class Price extends Component {
 	}
 
 	componentWillMount() {
-		const property = this.props.property;
-		if ( property.price ) {
+		const price = this.props.price;
+		if ( price ) {
 			this.setState({
-				price: property.price
+				price: price
 			});
 		}
 	}
@@ -18,12 +18,10 @@ class Price extends Component {
 	componentWillReceiveProps( nextProps ) {
 		
 		// Props have updated so we need to update state
-		const property = nextProps.property;
-		this.setState( state => ({
-			...state,
-			...property
-			}
-		));
+		const price = nextProps.price;
+		this.setState({
+			price: price
+		});
 	}
 
 	render({ property, handleChange }) {

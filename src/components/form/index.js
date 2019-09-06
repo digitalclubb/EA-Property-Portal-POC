@@ -80,13 +80,13 @@ class Form extends Component {
 				<article class="article">
 					<form onSubmit={ eventHandler }>
 						<Title title={ property.title } handleChange={ this.handleChange } />
-						<Address property={ property } handleChange={ this.handleChange } />
+						<Address address={ property.address } handleChange={ this.handleChange } />
 						<Description property={ property } handleChange={ this.handleChange } />
 						<Photos photos={ property.photos } />
 						<Floorplan floorplan={ property.floorplan } />
-						<Price property={ property } handleChange={ this.handleChange } />
+						<Price price={ property.price } handleChange={ this.handleChange } />
 						<Schedule portals={property.portals} />
-						<Notes property={ property } handleChange={ this.handleChange } />
+						<Notes notes={ property.notes } handleChange={ this.handleChange } />
 					</form>
 				</article>
 			</div>
