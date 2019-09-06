@@ -8,11 +8,28 @@
 }
 
 .toolbar__wrap {
-	align-items: flex-end;
+	align-items: center;
 	display: flex;
-	flex-direction: column;
 	flex-wrap: wrap;
 	position: relative;
+}
+
+.toolbar__back {
+	color: #ffffff;
+	flex-grow: 1;
+	font-size: 14px;
+	text-decoration: none;
+}
+
+.toolbar__back::before {
+	content: '◄';
+	display: inline-block;
+    font-size: 12px;
+    margin-right: 8px;
+}
+
+.toolbar__back:hover {
+	text-decoration: underline;
 }
 
 .toolbar__button,
@@ -75,6 +92,7 @@
 	min-width: 300px;
 	padding: 16px;
 	position: absolute;
+	right: 0;
 	top: 41px;
 }
 
@@ -84,17 +102,6 @@
 	padding-bottom: 8px;
 }
 
-.toolbar__label {
-
-}
-
 .toolbar__setting {
 	font-weight: bold;
 }
-
-.toolbar__button--publish {
-
-}
-
-
-

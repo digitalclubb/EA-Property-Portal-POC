@@ -1,4 +1,5 @@
 import { h, Component } from 'preact';
+import { Link } from 'preact-router/match';
 import style from './style';
 
 class Toolbar extends Component {
@@ -44,6 +45,8 @@ class Toolbar extends Component {
 			<div class={style.toolbar}>
 				<div class={'container ' + style.toolbar__wrap}>
 
+				<Link class={ style.toolbar__back } href="/">Back to property list</Link>
+
 					<div class={style.toolbar__buttons}>
 
 						{/* Save button */}
@@ -51,14 +54,14 @@ class Toolbar extends Component {
 
 						{/* Trigger visibility of publish button modal */}
 						<button class={style.toolbar__status} onClick={ this.handleClick }>Status: <span class={style.tooldbar__status_current}>{status}</span></button>
-					</div>
 
-					{/* Publish button modal */}
-					<div class={`${style.toolbar__modal} ${ this.state.showPublish ? 'visible' : 'hidden' }`}>
-						<h4 class={style.toolbar__heading}>Publish Property</h4>
-						<div class={style.toolbar__label}>Schedule: <span class={style.toolbar__setting}>No schedule</span></div>
-						<button class={style.toolbar__publish} name="status" value={status} onClick={ this.updateStatus }>{ status === 'draft' ? 'Publish' : 'Republish' }</button>
-						<button class={`${style.toolbar__unpublish} ${status === 'draft' ? 'hidden' : 'visible'}`} name="status" value={status} onClick={ this.updateStatus }>Unpublish</button>
+						{/* Publish button modal */}
+						<div class={`${style.toolbar__modal} ${ this.state.showPublish ? 'visible' : 'hidden' }`}>
+							<h4 class={style.toolbar__heading}>Publish Property</h4>
+							<div class={style.toolbar__label}>Schedule: <span class={style.toolbar__setting}>No schedule</span></div>
+							<button class={style.toolbar__publish} name="status" value={status} onClick={ this.updateStatus }>{ status === 'draft' ? 'Publish' : 'Republish' }</button>
+							<button class={`${style.toolbar__unpublish} ${status === 'draft' ? 'hidden' : 'visible'}`} name="status" value={status} onClick={ this.updateStatus }>Unpublish</button>
+						</div>
 					</div>
 				</div>
 			</div>

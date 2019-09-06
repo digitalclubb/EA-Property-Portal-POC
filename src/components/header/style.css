@@ -13,3 +13,8 @@
 	font-size: 24px;
 	margin-right: 32px;
 }
+
+.header__link {
+	color: #ffffff;
+	text-decoration: none;
+}
