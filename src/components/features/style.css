@@ -1,0 +1,14 @@
+.features__button {
+	background-color: #344955;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    padding: 8px 16px;
+}
+
+.features__button:hover {
+	background-color: #232f34;
+}

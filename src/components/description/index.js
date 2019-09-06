@@ -2,6 +2,7 @@ import { h, Component } from 'preact';
 
 import Input from '../../elements/input';
 import Textarea from '../../elements/textarea';
+import Features from '../../components/features';
 
 class Description extends Component {
 
@@ -47,14 +48,7 @@ class Description extends Component {
 					
 					<Input label="Number of bedrooms" htmlClass="input input--shortest" id="bedrooms" name="bedrooms" type="number" value={ this.state.bedrooms } handleChange={ handleChange }  />
 
-					<div class="form-group">
-						<label class="label" for="features">Key features</label>
-						{ this.state.features && this.state.features.map( feature => (
-							<input class="input input--shortest" name="features" type="text" value={ feature } />
-						))}
-						
-						Add feature
-					</div>
+					<Features features={ this.state.features } />
 
 					<Textarea label="Description" id="description" name="description" rows="10" value={ this.state.description } handleChange={ handleChange }  />
 

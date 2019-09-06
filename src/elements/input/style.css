@@ -36,6 +36,11 @@
 	}
 }
 
+.input--feature {
+	display: block;
+	margin-bottom: 16px;
+}
+
 /* Modifiers */
 .form-group--search {
 	margin-bottom: 0;
