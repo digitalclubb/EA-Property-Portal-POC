@@ -1,10 +1,9 @@
 .toolbar {
 	background-color: #4a6572;
-    margin-bottom: 16px;
     padding-bottom: 8px;
 	padding-top: 8px;
 	position: sticky;
-	top: 0;
+	top: 66px;
 }
 
 .toolbar__wrap {

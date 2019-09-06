@@ -9,23 +9,21 @@ class Title extends Component {
 	}
 
 	componentWillMount() {
-		const property = this.props.property;
-		if ( property.title ) {
+		const title = this.props.title;
+		if ( title ) {
 			this.setState({
-				title: property.title
+				title: title
 			});
 		}
 	}
 
 	componentWillReceiveProps( nextProps ) {
-		
+
 		// Props have updated so we need to update state
-		const property = nextProps.property.address;
-		this.setState( state => ({
-			...state,
-			...property
-			}
-		));
+		const title = nextProps.title;
+		this.setState({
+			title: nextProps.title
+		});
 	}
 
 	render({ handleChange }) {

@@ -1,7 +1,7 @@
 .sidebar {
-    /*position: fixed;*/
+    position: fixed;
     bottom: 0;
-    top: 67px;
+    top: 115px; /* Height of header and toolbar */
     left: 0;
     width: 75px;
     margin: 0;
@@ -9,8 +9,18 @@
 }
 
 .sidebar__link {
+	color: #232f34;
     display: block;
-    font-size: 12px;
-    padding: 10px 15px;
+    font-size: 11px;
+	padding: 16px 8px;
+	text-align: center;
     text-decoration: none;
+}
+
+.sidebar__link:hover {
+	color: #344955;
+}
+
+.sidebar__link_text {
+	display: block;
 }

@@ -35,7 +35,7 @@ class Notes extends Component {
 					<legend class="legend">
 						<h3>Internal notes</h3>
 					</legend>
-					<Textarea label="These notes are for your own records only" id="notes" name="notes" rows="5" value={ this.state.notes } handleChange={ handleChange }  />
+					<Textarea label="These notes are for internal use only" id="notes" name="notes" rows="5" value={ this.state.notes } handleChange={ handleChange }  />
 				</fieldset>
 			</section>
 		)

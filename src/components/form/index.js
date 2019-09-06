@@ -79,7 +79,7 @@ class Form extends Component {
 				<Toolbar handleChange={ this.handleChange } handleSubmit={ this.handleSubmit } handleNewSubmit={ this.handleNewSubmit } status={ property.status } newProperty={ this.newProperty } />
 				<article class="article">
 					<form onSubmit={ eventHandler }>
-						<Title property={ property } handleChange={ this.handleChange } />
+						<Title title={ property.title } handleChange={ this.handleChange } />
 						<Address property={ property } handleChange={ this.handleChange } />
 						<Description property={ property } handleChange={ this.handleChange } />
 						<Photos photos={ property.photos } />
