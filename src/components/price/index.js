@@ -1,4 +1,5 @@
 import { h, Component } from 'preact';
+import style from './style';
 
 class Price extends Component {
 
@@ -42,7 +43,7 @@ class Price extends Component {
 
 					<div class="form-group">
 						<label class="label" for="price">Current asking price</label>
-						<span>&pound;</span><input class="input input--shortest" id="price" name="price" type="text" value={ this.state.price } onChange={ handleChange } />
+						<span class={ style.price }>&pound;</span><input class="input input--shortest" id="price" name="price" type="text" value={ this.state.price } onChange={ handleChange } />
 					</div>
 				</fieldset>
 			</section>

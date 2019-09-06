@@ -42,7 +42,16 @@ class Property extends Component {
     render() {
         return (
             <tr class={ style.property }>
-                <td class={ style.property__field }><Link class={ style.property__link } href={`/edit/${ this.state.id }`}>{ this.state.address.line1 },{ this.state.address.line2 },{ this.state.address.city }</Link></td>
+				<td class={ style.property__field }>{ this.state.id }</td>
+                <td class={ style.property__field }>
+					<Link class={ style.property__link } href={`/edit/${ this.state.id }`}>
+
+						{/* Loop over address items and join with a comma */}
+						{ Object.values( this.state.address ).slice( 0, -1 ).filter( item => {
+							return item.length;
+						}).join( ', ' ) }
+					</Link>
+				</td>
                 <td class={ style.property__field }>{ this.state.address.postcode }</td>
                 <td class={ style.property__field }>{ this.state.bedrooms }</td>
                 <td class={ style.property__field }>{ this.state.type }</td>
