@@ -1,6 +1,7 @@
 import { h, Component } from 'preact';
-import { Link } from 'preact-router/match';
 import style from './style';
+
+import Button from '../../elements/button';
 
 class Header extends Component {
 
@@ -19,9 +20,8 @@ class Header extends Component {
 		return (
 		<header class={style.header}>
 			<div class="container">
-				<h1 class={style.header__heading}>Property Portal</h1>
-				<Link activeClassName={style.active} href={ '/edit/' + this.uuid }>Create</Link>
-				<Link activeClassName={style.active} href="/logout">Logout</Link>
+				<h1 class={style.header__heading}>EA Property Portal</h1>
+				<Button href={'/edit/' + this.uuid} label="Create" />
 			</div>
 		</header>
 		)

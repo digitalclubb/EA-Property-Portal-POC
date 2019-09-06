@@ -59,14 +59,16 @@ class List extends Component {
 		return (
 			<div>
 				<Search handleChange={ this.handleChange } searchTerm={ this.state.searchTerm } />
-				<table class={style.list}>
-					<Filters />
-					<tbody class="list">
-						{ this.state.filtered.map( item => (
-							<Property item={ item } />
-						))}
-					</tbody>
-				</table>
+				<div class="container">
+					<table class={style.list}>
+						<Filters />
+						<tbody class={style.list__items}>
+							{ this.state.filtered.map( item => (
+								<Property item={ item } />
+							))}
+						</tbody>
+					</table>
+				</div>
 			</div>
 		)
 	}

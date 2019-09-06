@@ -1,7 +1,8 @@
 import { h } from 'preact';
+import style from './style';
 
 const Footer = () => (
-	<div>
+	<div class="container footer">
 		&copy; 2019 EAPP Inc
 	</div>
 );

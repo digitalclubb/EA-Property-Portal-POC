@@ -1,0 +1,15 @@
+.property__field {
+	border-bottom: solid 1px #b4c1cb;
+	padding: 16px 32px;
+	text-transform: capitalize;
+}
+
+.property__link {
+	color: #4a6572;
+	font-weight:bold;
+	text-decoration: none;
+}
+
+.property__link:hover {
+	color: #232f34;
+}
