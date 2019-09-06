@@ -46,7 +46,7 @@ class Property extends Component {
                 <td class={ style.property__field }>
 					<Link class={ style.property__link } href={`/edit/${ this.state.id }`}>
 
-						{/* Loop over address items and join with a comma */}
+						{/* Loop over address items and join with a comma (ignore postcode) */}
 						{ Object.values( this.state.address ).slice( 0, -1 ).filter( item => {
 							return item.length;
 						}).join( ', ' ) }

@@ -1,11 +1,18 @@
 .sidebar {
     position: fixed;
-    bottom: 0;
+	bottom: 0;
+	display: none; /* Hidden on mobile (not a good approach) */
     top: 115px; /* Height of header and toolbar */
     left: 0;
     width: 75px;
     margin: 0;
-    background-color: #e6e6e6;
+	background-color: #e6e6e6;
+}
+
+@media only screen and ( min-width:480px ){
+	.sidebar {
+		display: block;
+	}	
 }
 
 .sidebar__link {
