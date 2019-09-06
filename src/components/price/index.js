@@ -10,7 +10,7 @@ class Price extends Component {
 		const price = this.props.price;
 		if ( price ) {
 			this.setState({
-				price: price
+				price: this.formatPrice( price )
 			});
 		}
 	}
@@ -20,8 +20,16 @@ class Price extends Component {
 		// Props have updated so we need to update state
 		const price = nextProps.price;
 		this.setState({
-			price: price
+			price: this.formatPrice( price )
 		});
+	}
+
+	// TODO: This should be a shared util/action
+	formatPrice( price ) {
+		const formatter = new Intl.NumberFormat('en-GB', {
+			minimumFractionDigits: 0
+		})
+		return formatter.format( price );
 	}
 
 	render({ property, handleChange }) {

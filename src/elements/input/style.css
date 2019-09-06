@@ -1,10 +1,18 @@
 .label {
     font-weight: bold;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.25;
     color: #0b0c0c;
     display: block;
     margin-bottom: 5px;
+}
+
+.hint {
+	color: #6f777b;
+	display: block;
+	font-size: 16px;
+	line-height: 1.25;
+	margin-bottom: 15px;
 }
 
 .input {

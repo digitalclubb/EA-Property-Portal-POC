@@ -1,5 +1,6 @@
 import { h, Component } from 'preact';
 
+import Radio from '../../elements/radio';
 import Checkbox from '../../elements/checkbox';
 
 class Schedule extends Component {
@@ -49,14 +50,8 @@ class Schedule extends Component {
 
 					<div class="form-group">
 						<div class="label">Schedule</div>
-						<label class="label-group">
-							<input class="" name="schedule" type="radio" checked /> 
-							No schedule
-						</label>
-						<label class="label-group">
-							<input class="" name="schedule" type="radio" disabled />
-							Schedule start
-						</label>
+						<Radio id="no-schedule" name="schedule" label="No Schedule" checked="true" />
+						<Radio id="schedule" name="schedule" label="Schedule start" />
 					</div>
 
 					<div class="form-group">

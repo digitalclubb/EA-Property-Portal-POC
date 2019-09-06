@@ -4,6 +4,7 @@
 	padding-top: 8px;
 	position: sticky;
 	top: 66px;
+	z-index: 2;
 }
 
 .toolbar__wrap {

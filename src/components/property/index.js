@@ -24,7 +24,7 @@ class Property extends Component {
 			address: this.props.item.address,
 			bedrooms: this.props.item.bedrooms,
 			type: this.props.item.type,
-			price: this.formatPrice(this.props.item.price),
+			price: this.formatPrice( this.props.item.price ),
 			status: this.props.item.status
 		});
 	}

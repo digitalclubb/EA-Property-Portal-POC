@@ -1,10 +1,11 @@
 import { h, Component } from 'preact';
+import style from './style';
 
 const Checkbox = ({ label, id, name, value, checked }) => {
 	return (
-		<div class="form-checkbox">
-			<input class="checkbox" id={ id } name={ name } type="checkbox" value={ value } checked={ checked } />
-			<label class="label-inline" for={ id }>{ label }</label>
+		<div class="checkbox">
+			<input class="checkbox__input" type="checkbox" id={ id } name={ name } value={ value } checked={ checked } />
+			<label class="checkbox__label" for={ id }>{ label }</label>
 		</div>
 	)
 }
