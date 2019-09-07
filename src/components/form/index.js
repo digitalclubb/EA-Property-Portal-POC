@@ -24,7 +24,8 @@ class Form extends Component {
 	}
 
 	state = {
-		list: []
+		list: [],
+		id: 0
 	}
 
 	// Updating local state with values from form fields

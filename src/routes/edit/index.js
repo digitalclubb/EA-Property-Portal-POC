@@ -7,7 +7,7 @@ import Sidebar from '../../components/sidebar';
 
 const Edit = connect( ['list'], actions )( ({ id, list, updateProperties, createProperty }) => (
 	<div>
-		<Form { ...{ id,list, updateProperties, createProperty } } />
+		<Form { ...{ id, list, updateProperties, createProperty } } />
 		<Sidebar />
 	</div>
 ));
