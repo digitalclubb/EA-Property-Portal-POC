@@ -4,31 +4,6 @@ import style from './style';
 
 class Property extends Component {
 
-	state = {
-		id: '',
-		address: {
-			line1: '',
-			line2: '',
-			city: '',
-			postcode: ''
-		},
-		bedrooms: '',
-		type: '',
-		price: '',
-		status: ''
-	}
-
-	componentWillMount() {
-		this.setState ({
-			id: this.props.item.id,
-			address: this.props.item.address,
-			bedrooms: this.props.item.bedrooms,
-			type: this.props.item.type,
-			price: this.formatPrice( this.props.item.price ),
-			status: this.props.item.status
-		});
-	}
-
 	// Format simple number into UK GBP
 	formatPrice( price ) {
 		const formatter = new Intl.NumberFormat('en-GB', {
@@ -40,23 +15,24 @@ class Property extends Component {
 	}
 
     render() {
+		const property = this.props.item;
         return (
             <tr class={ style.property }>
-				<td class={ style.property__field }>{ this.state.id }</td>
+				<td class={ style.property__field }>{ property.id }</td>
                 <td class={ style.property__field }>
-					<Link class={ style.property__link } href={`/edit/${ this.state.id }`}>
+					<Link class={ style.property__link } href={`/edit/${ property.id }`}>
 
 						{/* Loop over address items and join with a comma (ignore postcode) */}
-						{ Object.values( this.state.address ).slice( 0, -1 ).filter( item => {
+						{ Object.values( property.address ).slice( 0, -1 ).filter( item => {
 							return item.length;
 						}).join( ', ' ) }
 					</Link>
 				</td>
-                <td class={ style.property__field }>{ this.state.address.postcode }</td>
-                <td class={ style.property__field }>{ this.state.bedrooms }</td>
-                <td class={ style.property__field }>{ this.state.type }</td>
-                <td class={ style.property__field }>{ this.state.price }</td>
-                <td class={ style.property__field }>{ this.state.status }</td>
+                <td class={ style.property__field }>{ property.address.postcode }</td>
+                <td class={ style.property__field }>{ property.bedrooms }</td>
+                <td class={ style.property__field }>{ property.type }</td>
+                <td class={ style.property__field }>{ this.formatPrice( property.price ) }</td>
+                <td class={ style.property__field }>{ property.status }</td>
             </tr>
         )
     }

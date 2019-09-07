@@ -17,25 +17,21 @@ class List extends Component {
 		filtered: []
 	}
 
-	// TODO: Crude, only searches first line address for POC
+	// TODO: Crude, only searches address for POC
 	handleChange( event ) {
 
 		let properties = this.props.properties;
-		let filtered = [];
+		let filtered = properties;
 
 		if ( event.target.value !== '' ) {
 
+			const filter = event.target.value.toLowerCase();
 			filtered = properties.filter( property => {
-
-				const lowerCase = property.address.line1.toLowerCase();
-				const filter = event.target.value.toLowerCase();
-
-				return lowerCase.includes( filter );
+				return Object.values( property.address ).some( value =>
+					value.toLowerCase().includes( filter )
+				);
 			});
-
-		} else {
-			filtered = properties;
-		}
+		} 
 
 		this.setState({
 			searchTerm: event.target.value,
@@ -43,15 +39,9 @@ class List extends Component {
 		});
 	}
 
-	componentDidMount() {
+	componentWillMount() {
 		this.setState({
 		  filtered: this.props.properties
-		});
-	  }
-	  
-	  componentWillReceiveProps( nextProps ) {
-		this.setState({
-		  filtered: nextProps.properties
 		});
 	  }
 
