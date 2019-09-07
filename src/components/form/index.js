@@ -24,8 +24,7 @@ class Form extends Component {
 	}
 
 	state = {
-		list: [],
-		id: 0
+		list: []
 	}
 
 	// Updating local state with values from form fields
@@ -56,8 +55,10 @@ class Form extends Component {
 
 		// If no matching property exists, it must be new
 		if ( !property.length ) {
+
+			// TODO: Really crude. Not checking existing IDs for now (should be a service)
 			property = [{
-				id: parseInt( this.props.id ),
+				id: Math.floor( 1000 + Math.random() * 9000 ),
 				status: 'draft'
 			}]
 			this.newProperty = true;
