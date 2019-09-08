@@ -26,7 +26,7 @@ npm run test
 ```
 ## TODOs
 
-- [ ] Meaningful tests, test and more tests!
+- [ ] Meaningful tests, tests and more tests!
 - [ ] Bug fixes!
 - [ ] Sortable tables to enable filtering by column
 - [ ] Effective search on all data (not just address)
